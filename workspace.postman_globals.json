@@ -1,0 +1,189 @@
+{
+	"id": "fbca4eff-baf9-4df6-8b29-871c274d2827",
+	"values": [
+		{
+			"key": "authtoken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R1RJWWRrb01LbXRWODRRWlRFNTJBQlg5cHpiYWRxX1RrNDBDM05naFpvIn0.eyJleHAiOjE3MTMyNzc2MzUsImlhdCI6MTcxMzI0MTYzNiwiYXV0aF90aW1lIjoxNzEzMjQxNjM1LCJqdGkiOiJkNmU0MjhjZC03NjZiLTRmYzAtOGJlZi01ODIyNzVjMzliMDUiLCJpc3MiOiJodHRwczovL2FwaS5hcHBkZXYuYXBwcy55b2tvZ2F3YS5idWlsZC9pZHB0LWF1dGh6L2F1dGgvcmVhbG1zL1lJQlBPQyIsImF1ZCI6InlpYnN1aXRlLXVpIiwic3ViIjoiZDY2M2ZiODktOTc2Yi00NDc2LTliNTAtMDk4YmNkNmM5Yjk1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoieWlic3VpdGUtdWkiLCJub25jZSI6ImRWVTFOV056VmtaM1FtdGlWbXhyWXpCc2JHUlVURmN5ZFVWeU0zcEZZM2xPVFVVd2NrMUZkbmxXU1d0SiIsInNlc3Npb25fc3RhdGUiOiI1ZmRlNTkzNC03ZmU4LTQ2OWYtOWMwZS1kZDE0OWE2ZGM4YzYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwNCIsImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMyIsImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMiIsImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMSIsImh0dHBzOi8vY2xvdWQuYXBwZGV2LmFwcHMueW9rb2dhd2EuYnVpbGQvYXBwLWJkeC1ob3N0L3lpYnBvYy8iLCJodHRwOi8vbG9jYWxob3N0OjQyMDAiLCJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJodHRwOi8vbG9jYWxob3N0OjgwMTIiLCJodHRwczovL2Nsb3VkLmFwcGRldi5hcHBzLnlva29nYXdhLmJ1aWxkL2FwcC1iZHgtZGF0YS1pbnRlZ3JhdGlvbi95aWJwb2MvIiwiaHR0cHM6Ly9jbG91ZC5hcHBkZXYuYXBwcy55b2tvZ2F3YS5idWlsZC9hcHAtYmR4LXVzcC1kdC95aWJwb2MvIiwiaHR0cHM6Ly9jbG91ZC5hcHBkZXYuYXBwcy55b2tvZ2F3YS5idWlsZC9hcHAteWliLWhvc3QveWlicG9jLyoiLCJodHRwczovL2Nsb3VkLmFwcGRldi5hcHBzLnlva29nYXdhLmJ1aWxkL2FwcC1iZHgtcmVwb3J0cy95aWJwb2MvIiwiaHR0cHM6Ly9jbG91ZC5hcHBkZXYuYXBwcy55b2tvZ2F3YS5idWlsZC9hcHAtYmR4LWFzc2V0cy95aWJwb2MvIiwiaHR0cHM6Ly9jbG91ZC5hcHBkZXYuYXBwcy55b2tvZ2F3YS5idWlsZCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiU2NpZW50aWZpYyBNYW5hZ2VyIiwiRGF0YSBTY2llbnRpc3QiLCJTdXBlciBBZG1pbiIsIlNjaWVudGlzdCBQRCJdfSwic2NvcGUiOiJvcGVuaWQgZW1haWwgYXVkLXlpYnN1aXRlLXVpIHByb2ZpbGUiLCJzaWQiOiI1ZmRlNTkzNC03ZmU4LTQ2OWYtOWMwZS1kZDE0OWE2ZGM4YzYiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInVzZXJfcmVhbG1fcm9sZXMiOlsiU2NpZW50aWZpYyBNYW5hZ2VyIiwiRGF0YSBTY2llbnRpc3QiLCJTdXBlciBBZG1pbiIsIlNjaWVudGlzdCBQRCJdLCJuYW1lIjoic2hyaWRoYXJhIHJhbWFzd2FteSIsInByZWZlcnJlZF91c2VybmFtZSI6ImNiMjIyYzYxOTJjZjQ4MTQ4ZjA2ZThlNjZhNzJkNjc0IiwiZ2l2ZW5fbmFtZSI6InNocmlkaGFyYSIsImZhbWlseV9uYW1lIjoicmFtYXN3YW15IiwiZW1haWwiOiJzaHJpZGhhcmEucmFtYXN3YW15QHlva29nYXdhLmNvbSJ9.NX9IjFMby9VpgkDrL9iG-lS8nWWkl72TREDMf-m_WvpAY39z4OLcXZnN3Dev3MIR4E8LESYT_HDiQWdBB6g1NMg_0yL8DBtP5lh-hFjvSIn13lCV0Bq-3_RqDxYLoCaqj69yORZfZ4NQjaQAxJ1tkXeZZED7MaIdRJ733Ez0x2T5aAKYsh1S9fgBNtQuU3rIiGbuY35u5UbtvumbZ7oxydbJFjyXdMp8ROiNM_tWeeOh6IGKAgTEJ4dkUklIMaSUVtp1j8kf8QqvUTYdrqQJIJaZFj4bEMLkzK3C0nxqqD5JrdyFr87_nEmh1isMTVAVaWob3P4HQY87p9vb8Qq7gw",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "workspaceid",
+			"value": "bb6be56c-b4a8-41ad-8217-1da09d7d8e37",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "uspid",
+			"value": "f0667b87-3a70-4bf2-8649-190465f2a5f9",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseurl",
+			"value": "https://cloud.appdev.apps.yokogawa.build/app-bdx-usp-dt-services/yibpoc/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "usecaseid",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "dibaseurl",
+			"value": "https://cloud.appdev.apps.yokogawa.build/app-bdx-data-integration-services/yibpoc/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "diid",
+			"value": "6e4c870e-1a64-49cc-85a1-de8f17ff9787",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "int",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "use_case_name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "use_case",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "reportbaseurl",
+			"value": "https://cloud.appdev.apps.yokogawa.build/app-bdx-reportingservices/yibpoc/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "uspint",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "usp_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "group_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "reactor_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "influx_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "controller_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "outflux_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "out_controller_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "duplicate_usp",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "invalidworkspaceid",
+			"value": "bb6be56c-b4a8-41ad-8217-1da09d7f7g37",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "product_molecule_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "assetbaseurl",
+			"value": "https://cloud.appdev.apps.yokogawa.build/app-bdx-workspaceservices/yibpoc",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "metabolic_network_model_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "medium_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "sensor_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "controller_parameter_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "medium_id_gas",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "retention_system_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "invalidproductid",
+			"value": "54ef822b-fb6e-4049-9dca-0bd893af639f",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-04-16T12:29:26.989Z",
+	"_postman_exported_using": "Postman/10.24.19"
+}

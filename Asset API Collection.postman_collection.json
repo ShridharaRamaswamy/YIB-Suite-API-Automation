@@ -1,0 +1,2816 @@
+{
+	"info": {
+		"_postman_id": "7832dbc5-aa3d-4533-b0c7-c1f7436be89e",
+		"name": "Asset API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18788930",
+		"_collection_link": "https://planetary-shuttle-148359.postman.co/workspace/YIB-Suite~184b8d73-36fd-48c7-b4ee-8f645ff5388c/collection/18788930-7832dbc5-aa3d-4533-b0c7-c1f7436be89e?action=share&source=collection_link&creator=18788930"
+	},
+	"item": [
+		{
+			"name": "Get Health Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.status).to.be.eql(\"OK\")\r",
+							"\r",
+							"        // pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"retention_system_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/healthcheck",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Constraint List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        // pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"retention_system_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/constraint/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"constraint",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Unit List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        // pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"retention_system_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/constraint/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"constraint",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Molecule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.globals.set(\"product_molecule_id\",jsonData[0].product_molecule_id)\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/product-molecule/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"product-molecule",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Molecule By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].product_molecule_id).to.be.eql(pm.globals.get(\"product_molecule_id\"))\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/product-molecule/detail/{{product_molecule_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"product-molecule",
+						"detail",
+						"{{product_molecule_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Molecule By invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.length).to.be.eql(0)\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/product-molecule/detail/{{invalidproductid}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"product-molecule",
+						"detail",
+						"{{invalidproductid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Molecule By blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/product-molecule/detail/  ",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"product-molecule",
+						"detail",
+						"  "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Species List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/species-list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"species-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"metabolic_network_model_id\",jsonData[0].metabolic_network_model_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"medium_id\",jsonData[0].medium_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"sensor_id\",jsonData[0].sensor_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"reactor_id\",jsonData[0].reactor_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"controller_id\",jsonData[0].controller_id)\r",
+							"        pm.globals.set(\"controller_parameter_id\",jsonData[0].controller_parameter_value[0].controller_parameter.controller_parameter_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"medium_id_gas\",jsonData[0].medium_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"        pm.globals.set(\"retention_system_id\",jsonData[0].retention_system_id)\r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/list",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].metabolic_network_model_id).to.be.eql(pm.globals.get(\"metabolic_network_model_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/detail?metabolic_network_model_id={{metabolic_network_model_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "metabolic_network_model_id",
+							"value": "{{metabolic_network_model_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Validation Error :: metabolic_network_model_id: Field required\\n\")\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "metabolic_network_model_id",
+							"value": "{{metabolic_network_model_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.length).to.be.eql(0)\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/detail?metabolic_network_model_id=e4c8821a-b38f-43a8-91bf-aadf8de7d4bb",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "metabolic_network_model_id",
+							"value": "e4c8821a-b38f-43a8-91bf-aadf8de7d4bb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/detail?metabolic_network_model_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "metabolic_network_model_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MNM Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/metabolic-network-model/detail?metabolic_network_model_id=628779-5433-6343-2224",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"metabolic-network-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "metabolic_network_model_id",
+							"value": "628779-5433-6343-2224"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"medium_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/detail?medium_id={{medium_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "medium_id",
+							"value": "{{medium_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Validation Error :: medium_id: Field required\\n\")\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "medium_id",
+							"value": "{{medium_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/detail?medium_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "medium_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.length).to.be.eql(0)\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/detail?medium_id=3127b252-1b62-405c-879c-380b03a1fa38",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "medium_id",
+							"value": "3127b252-1b62-405c-879c-380b03a1fa38"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medium Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"             \r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/medium/detail?medium_id=637838-32636-3737",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"medium",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "medium_id",
+							"value": "637838-32636-3737"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].sensor_id).to.be.eql(pm.globals.get(\"sensor_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/detail?sensor_id={{sensor_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": "{{sensor_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).to.be.eql(\"Validation Error :: sensor_id: Field required\\n\")\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": "{{sensor_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/detail?sensor_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Validation Error :: sensor_id: UUID version 4 expected\\n\")\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/detail?sensor_id=9a70c45e-1786-5dae-aff6-287e7abd8e5f",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": "9a70c45e-1786-5dae-aff6-287e7abd8e5f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sensor/detail?sensor_id=rr52513-he75-ue7857",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sensor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": "rr52513-he75-ue7857"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].reactor_id).to.be.eql(pm.globals.get(\"reactor_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/detail?reactor_id={{reactor_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "reactor_id",
+							"value": "{{reactor_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).to.be.eql(\"Validation Error :: reactor_id: Field required\\n\")\r",
+							"\r",
+							"        \r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "reactor_id",
+							"value": "{{reactor_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"\r",
+							"    \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/detail?reactor_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "reactor_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.length).to.be.eql(0)\r",
+							"\r",
+							"    \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/detail?reactor_id=05bd9b2f-e194-4d22-8f20-90227be1f0f0",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "reactor_id",
+							"value": "05bd9b2f-e194-4d22-8f20-90227be1f0f0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reactor Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/reactor/detail?reactor_id=646gdg-eye7-yey7",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"reactor",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "reactor_id",
+							"value": "646gdg-eye7-yey7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].controller_parameter_id).to.be.eql(pm.globals.get(\"controller_parameter_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/detail?controller_id={{controller_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "controller_id",
+							"value": "{{controller_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).to.be.eql(\"Validation Error :: controller_id: Field required\\n\")\r",
+							"\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "controller_id",
+							"value": "{{controller_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/detail?controller_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "controller_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller Detail invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.length).to.be.eql(0)\r",
+							"\r",
+							"          \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/detail?controller_id=8a669637-e335-42f3-8651-45efd960eb40",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "controller_id",
+							"value": "8a669637-e335-42f3-8651-45efd960eb40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Controller Detail invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/controller/detail?controller_id=2521wqfas-yt65-ueu76",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"controller",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "controller_id",
+							"value": "2521wqfas-yt65-ueu76"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"medium_id_gas\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/detail?sparging_gas_id={{medium_id_gas}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sparging_gas_id",
+							"value": "{{medium_id_gas}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).to.be.eql(\"Validation Error :: sparging_gas_id: Field required\\n\")\r",
+							"\r",
+							"\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sparging_gas_id",
+							"value": "{{medium_id_gas}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/detail?sparging_gas_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sparging_gas_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/detail?sparging_gas_id=5r6817ad-2bb2-49a3-8eh8e-feb2h80ed5ad",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sparging_gas_id",
+							"value": "5r6817ad-2bb2-49a3-8eh8e-feb2h80ed5ad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sparging Gas Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/sparging-gas/detail?sparging_gas_id=gwryuyew52-yeye7-uey88-76t",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"sparging-gas",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "sparging_gas_id",
+							"value": "gwryuyew52-yeye7-uey88-76t"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention Detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData[0].length).not.to.be.eql(0)\r",
+							"\r",
+							"        // pm.expect(jsonData[0].medium_id).to.be.eql(pm.globals.get(\"retention_system_id\"))\r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/detail?retention_system_id={{retention_system_id}}",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "retention_system_id",
+							"value": "{{retention_system_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/detail?retention_system_id=",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "retention_system_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/detail?retention_system_id=257abks688-a12d-4129-b4ce-0b81bd59d2c0",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "retention_system_id",
+							"value": "257abks688-a12d-4129-b4ce-0b81bd59d2c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention Detail Invalid ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Input should be a valid UUID\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/detail?retention_system_id=2862gsdhuh",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "retention_system_id",
+							"value": "2862gsdhuh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Retention Detail Blank ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate Response Data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"        pm.expect(jsonData.detail.message).contains(\"Validation Error :: retention_system_id: Field required\\n\")\r",
+							"        \r",
+							"        \r",
+							"\r",
+							"  \r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assetbaseurl}}/retension-system-model/detail",
+					"host": [
+						"{{assetbaseurl}}"
+					],
+					"path": [
+						"retension-system-model",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "retention_system_id",
+							"value": "{{retention_system_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
