@@ -35,7 +35,7 @@ jobs:
 
       # Run the postman collection
       - name: Run API Tests
-        run: newman run "Asset_API_Collection.postman_collection.json" -e workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export Reports/htmlreport.html
+        run: newman run "Asset_API_Collection.postman_collection.json" -e workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export htmlreport.html
 
       # # Upload the contents of test results directory to workspace
       # - name: Output the run details
