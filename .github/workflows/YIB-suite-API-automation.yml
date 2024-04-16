@@ -24,6 +24,9 @@ jobs:
       - name: Install newman
         run: |
           npm install -g newman
+          
+      - name: Install htmlextra
+        run: |
           npm install -g newman-reporter-htmlextra
 
       # # Make directory to upload the test results
@@ -32,7 +35,7 @@ jobs:
 
       # Run the postman collection
       - name: Run API Tests
-        run: newman run "Asset_API_Collection.postman_collection.json" -e workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export htmlreport.html
+        run: newman run "Asset_API_Collection.postman_collection.json" -e workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export Reports/htmlreport.html
 
       # # Upload the contents of test results directory to workspace
       # - name: Output the run details
