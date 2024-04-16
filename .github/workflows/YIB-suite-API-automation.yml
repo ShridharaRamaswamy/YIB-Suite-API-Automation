@@ -16,9 +16,9 @@ jobs:
 
       # Install node on the runner
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: 14
+          node-version: 16
 
       # Install the newman command-line utility, also install the html extra reporter
       - name: Install newman
